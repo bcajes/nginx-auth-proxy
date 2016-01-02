@@ -10,6 +10,7 @@ RUN rm default.conf
 COPY default.conf .
 
 COPY htpasswd /etc/nginx
+RUN chown nginx /etc/nginx/htpasswd
 
 COPY wrapper.sh /root/wrapper.sh
 ENTRYPOINT ["/root/wrapper.sh"]
